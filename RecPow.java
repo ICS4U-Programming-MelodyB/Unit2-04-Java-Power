@@ -54,32 +54,32 @@ public final class RecPow {
                 // Read line as string.
                 final String line = sc.nextLine();
                 inputList.add(line);
-                for (String input : inputList) {
-                    try {
-                        // Split the input into base and exponent.
-                        final String[] inputParts = input.split(" ");
+            }
+            for (String input : inputList) {
+                try {
+                    // Split the input into base and exponent.
+                    final String[] inputParts = input.split(" ");
 
-                        // Parse the input to integers
-                        final int base = Integer.parseInt(inputParts[0]);
-                        final int exponent = Integer.parseInt(inputParts[1]);
+                    // Parse the input to integers
+                    final int base = Integer.parseInt(inputParts[0]);
+                    final int exponent = Integer.parseInt(inputParts[1]);
 
-                        if (base >= 1 && exponent >= 0) {
-                            // call the function to call the power.
-                            final int recPower = recPow(base, exponent);
+                    if (base >= 1 && exponent >= 0) {
+                        // call the function to call the power.
+                        final int recPower = recPow(base, exponent);
 
-                            // Write to output file
-                            write.print("The number " + base);
-                            write.print("^" + exponent);
-                            write.print(" is = " + recPower);
-                        } else {
-                            write.println("Please enter a positive number.");
-                        }
-
-                    } catch (NumberFormatException error) {
-                        // Displays error to user if input is not a valid int.
-                        write.println("Error: Invalid, \""
-                                + line + "\" is not a valid number.");
+                        // Write to output file
+                        write.print("The number " + base);
+                        write.print("^" + exponent);
+                        write.println(" is = " + recPower);
+                    } else {
+                        write.println("Please enter a positive number.");
                     }
+
+                } catch (NumberFormatException error) {
+                    // Displays error to user if input is not a valid int.
+                    write.println("Error: Invalid, \""
+                            + input + "\" is not a valid number.");
                 }
             }
             // Closes scanner & writer.
